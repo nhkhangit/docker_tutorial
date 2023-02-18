@@ -33,7 +33,7 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 ##### 11. docker attach CONTAINER_ID
 > Khi một container đang khởi chạy mà chúng ta đã lỡ tắt terminal, chúng ta có thể truy cập lại vào container bằng lệnh trên. trong đó **CONTAINER_ID** là id của của Container
 
-##### 12. Ctrl +p, Ctr + q
+##### 12. Ctrl +p, q
 > Nếu chúng ta muốn thoát một container mà vẫn cho container tiếp tục chạy.
 
 ##### 13. docker stop NAME || CONTAINER_ID
@@ -45,7 +45,26 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 ##### 15. docker rm -f CONTAINER_ID || NAME
 > Để xóa một container không còn muốn sử dụng trong trạng thái vẫn còn đang hoạt động.
 
-##### 16. 
+##### 16. docker exec CONTAINER_ID || NAME  command
+> Khi chúng ta đứng bên ngoài một container mà vẫn muốn container đó thực một lệnh nào đó, thì chúng ta sử dụng lệnh trên.<br/>
+> Trong đó command là lệnh mà chúng ta muốn thực thi.
+
+##### 17. docker commit CONTAINER_ID || NAME NEW_NAME_IMAGE:NEW_TAG
+> Để đưa một container về thành một image chúng ta sử dụng lệnh trên. Lưu ý, container lúc này phải đang ở trạng thái dừng. <br/>
+> Trong đó: <br/>
+> **NEW_NAME_IMAGE**: Là tên muốn đặt cho container sau khi chuyển thành image. <br/>
+> **NEW_TAG**: Là version hay tag chúng ta muốn set cho container này sau khi chuyển thành image.
+
+##### 18. docker save --output NEW_NAME_IMAGE.tar IMAGE_ID || NAME
+> Để lưu một image ra thành file để tái sử dụng trên một docker ở máy khác chúng ta sử dụng lệnh trên.
+
+##### 19. docker load -i FILE_NAME_IMAGE.tar
+> Để thực hiện khôi phục một image từ một file nào đó.
+
+##### 20. docker tag IMAGE_ID NEW_NAME_IMAGE:NEW_TAG
+> Nếu khi load một image mới mà quên đặt tên cho image thì chúng ta sử dụng lệnh này để đặt tên mới cho image.
+
+
 ## Khái niệm
 ##### 1. Images
 > Images trong docker là các phần mềm được đóng gói và quản lý bởi docker. <br/>
