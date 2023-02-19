@@ -108,6 +108,10 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 > **VOLUME_NAME** là tên của ổ đĩa hay volume hay disk muốn cấp phép. <br/>
 > **PATH_CONTAINER** là đường dẫn sau khi ổ đĩa ánh xạ lênh trên container
 
+##### 28. docker volume create --opt device=PATH_HOST --opt type=none --opt o=bind DISK_NAME
+> Với lệnh này, chúng ta có thể sử dụng đường dẫn một folder trong máy host ánh xạ làm ổ đĩa cho container. Trong đó: <br/>
+**PATH_HOST** là đường dẫn thư mục tại máy host của chúng ta. <br/>
+**DISK_NAME là** tên mà chúng ta muốn đặt cho folder sau khi tạo thành ổ đĩa trên docker.
 ## Khái niệm
 ##### 1. Images
 > Images trong docker là các phần mềm được đóng gói và quản lý bởi docker. <br/>
