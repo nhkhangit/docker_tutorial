@@ -66,11 +66,12 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 ##### 20. docker tag IMAGE_ID NEW_NAME_IMAGE:NEW_TAG
 > Nếu khi load một image mới mà quên đặt tên cho image thì chúng ta sử dụng lệnh này để đặt tên mới cho image.
 
-##### 21. docker run -it -v HOST_PATH:CONTAINER_PATH IMAGE_ID
+##### 21. docker run -it -v HOST_PATH||DISK_NAME:CONTAINER_PATH IMAGE_ID
 > Trong đó: <br/>
 **HOST_PATH** là đường dẫn tại máy host của thư mục hoặc file bạn muốn chia sẻ dữ liệu. <br/>
 **CONTAINER_PATH** là đường dẫn bạn muốn thư mục chia sẻ theo HOST_PATH sẽ hiển thị tại CONTAINER.
 **IMAGE_ID** là id của image.
+**DISK_NAME** trường hợp chúng ta không sử dụng một folder mà chúng ta tạo một ổ đĩa từ máy host, sau đó ta lấy ổ đĩa đó và gán cho container thì tại đây chúng ta điền tên ổ đĩa thay vì đường dẫn thư mục tại máy host.
 
 ##### 22. docker run -it --volumes-from  OtherContainer IMAGE_ID
 > Với lệnh này sẽ giúp các container có thể sử dụng chung dữ liệu host giữa các container. <br/>
@@ -112,6 +113,10 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 > Với lệnh này, chúng ta có thể sử dụng đường dẫn một folder trong máy host ánh xạ làm ổ đĩa cho container. Trong đó: <br/>
 **PATH_HOST** là đường dẫn thư mục tại máy host của chúng ta. <br/>
 **DISK_NAME là** tên mà chúng ta muốn đặt cho folder sau khi tạo thành ổ đĩa trên docker.
+
+
+
+
 ## Khái niệm
 ##### 1. Images
 > Images trong docker là các phần mềm được đóng gói và quản lý bởi docker. <br/>
