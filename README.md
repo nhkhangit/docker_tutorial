@@ -22,6 +22,8 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 >(-t) Nếu container đó kết nối với terminal.<br/>
 >(--name "NAME_UPDATE") Nếu chúng ta muốn đặt tên cho container mà không sử dụng tên tự động.<br/>
 >(-h HOST_NAME) Nếu chúng ta muốn đặt lại hostname cho container.<br/>
+>(-v) Để chia sẻ dữ liệu từ máy host vào container. Và khi container bị xóa thì dữ liệu tại máy host vẫn giữ nguyên. <br/>
+
 ##### 8. docker ps
 > Để kiểm tra danh sách các container đang khởi chạy.
 ##### 9. docker ps -a
@@ -64,7 +66,18 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 ##### 20. docker tag IMAGE_ID NEW_NAME_IMAGE:NEW_TAG
 > Nếu khi load một image mới mà quên đặt tên cho image thì chúng ta sử dụng lệnh này để đặt tên mới cho image.
 
+##### 21. docker run -it -v HOST_PATH:CONTAINER_PATH IMAGE_ID
+> Trong đó: <br/>
+**HOST_PATH** là đường dẫn tại máy host của thư mục hoặc file bạn muốn chia sẻ dữ liệu. <br/>
+**CONTAINER_PATH** là đường dẫn bạn muốn thư mục chia sẻ theo HOST_PATH sẽ hiển thị tại CONTAINER.
+**IMAGE_ID** là id của image.
 
+##### 22. docker run -it --volumes-from  OtherContainer IMAGE_ID
+> Với lệnh này sẽ giúp các container có thể sử dụng chung dữ liệu host giữa các container. <br/>
+> Trong đó: <br/>
+**OtherContainer** là container mà bạn muốn container mới này sử dụng chung dữ liệu được máy host cấp phép.
+
+##### 22. 
 ## Khái niệm
 ##### 1. Images
 > Images trong docker là các phần mềm được đóng gói và quản lý bởi docker. <br/>
