@@ -97,6 +97,17 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
     "Scope": "local"<br/>
     }<br/>
 ]<br/>
+
+##### 26. docker volume rm VOLUME_NAME
+> Để thực hiện remove một ổ đĩa.
+
+##### 27. docker run -it --name NAME_CONTAINER --mount source=VOLUME_NAME,target=PATH_CONTAINER ID_IMAGE
+> Để cấp phép một container sử dụng một ổ đĩa nào đó.
+> Trong đó: <br/>
+> **NAME_CONTAINER** là tên muốn đặt cho container khi thực thi.<br/>
+> **VOLUME_NAME** là tên của ổ đĩa hay volume hay disk muốn cấp phép. <br/>
+> **PATH_CONTAINER** là đường dẫn sau khi ổ đĩa ánh xạ lênh trên container
+
 ## Khái niệm
 ##### 1. Images
 > Images trong docker là các phần mềm được đóng gói và quản lý bởi docker. <br/>
