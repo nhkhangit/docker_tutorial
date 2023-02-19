@@ -87,14 +87,14 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 ##### 25. docker volume inspect  VOLUME_NAME
 > Để check thông tin của một ổ đĩa ta sử dụng lệnh trên. Lệnh trên sẽ có kết quả như sau: <br/>
 > [ <br/>
-    {
-        "CreatedAt": "2023-02-19T06:28:04Z",<br/>
-        "Driver": "local",<br/>
-        "Labels": {},<br/>
-        "Mountpoint": "/var/lib/docker/volumes/D1/_data",<br/>
-        "Name": "D1",<br/>
-        "Options": {},<br/>
-        "Scope": "local"<br/>
+{
+    "CreatedAt": "2023-02-19T06:28:04Z",<br/>
+    "Driver": "local",<br/>
+    "Labels": {},<br/>
+    "Mountpoint": "/var/lib/docker/volumes/D1/_data",<br/>
+    "Name": "D1",<br/>
+    "Options": {},<br/>
+    "Scope": "local"<br/>
     }<br/>
 ]<br/>
 ## Khái niệm
