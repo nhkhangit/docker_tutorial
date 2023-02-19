@@ -77,7 +77,26 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 > Trong đó: <br/>
 **OtherContainer** là container mà bạn muốn container mới này sử dụng chung dữ liệu được máy host cấp phép.
 
-##### 22. 
+##### 23. docker volume ls
+> Xem danh sách các ổ đĩa được cấp phép cho docker.
+
+##### 24. docker volume create VOLUME_NAME
+> Tạo một ổ đĩa mới và gán vào một container, khi container xóa thì ổ đĩa này vẫn tồn tại, ngoại trừ trường hợp cố tình xóa ổ đĩa trước khi xóa container.<br/>
+> Trong đó: **VOLUME_NAME** là tên muốn set cho volume này.
+
+##### 25. docker volume inspect  VOLUME_NAME
+> Để check thông tin của một ổ đĩa ta sử dụng lệnh trên. Lệnh trên sẽ có kết quả như sau: <br/>
+> [
+    {
+        "CreatedAt": "2023-02-19T06:28:04Z",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/D1/_data",
+        "Name": "D1",
+        "Options": {},
+        "Scope": "local"
+    }
+]
 ## Khái niệm
 ##### 1. Images
 > Images trong docker là các phần mềm được đóng gói và quản lý bởi docker. <br/>
