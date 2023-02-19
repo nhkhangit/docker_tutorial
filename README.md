@@ -23,6 +23,7 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 >(--name "NAME_UPDATE") Nếu chúng ta muốn đặt tên cho container mà không sử dụng tên tự động.<br/>
 >(-h HOST_NAME) Nếu chúng ta muốn đặt lại hostname cho container.<br/>
 >(-v) Để chia sẻ dữ liệu từ máy host vào container. Và khi container bị xóa thì dữ liệu tại máy host vẫn giữ nguyên. <br/>
+>(--rm) Khi container này kết thúc thì docker tự xóa container này khỏi hệ thống.<br/>
 
 ##### 8. docker ps
 > Để kiểm tra danh sách các container đang khởi chạy.
@@ -114,8 +115,17 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 **PATH_HOST** là đường dẫn thư mục tại máy host của chúng ta. <br/>
 **DISK_NAME là** tên mà chúng ta muốn đặt cho folder sau khi tạo thành ổ đĩa trên docker.
 
+##### 29. docker network ls
+> Lệnh này sẽ show list network đang có trong docker
 
+##### 30. docker network inspect NAME_NETWORK
+> Lệnh này sẽ kiểm tra xem mạng này được các container nào đang kết nối.
 
+##### 31. docker inspect NAME_CONTAINER || CONTAINER_ID
+> Lệnh này sẽ kiểm tra thông tin về container đang chạy thông qua NAME hoặc CONTAINER_ID
+
+##### 32. docker run -it -p PORT_HOST:PORT_CONTAINER ID_IMAGE || NAME_IMAGE
+> Lệnh này sẽ thực thi tạo ra một container lắng nghe từ **PORT_HOST** của máy host chuyển vào **PORT_CONTAINER** của container.
 
 ## Khái niệm
 ##### 1. Images
@@ -127,5 +137,23 @@ gọi là các container <br/>
 Các container thì có thể ghi được dữ liệu vào trong nó. <br/>
 Ảnh minh họa:
 ![image](https://user-images.githubusercontent.com/84958646/219869218-f1b84c49-9cf9-45c5-a305-923ced8cb73b.png)
+##### 3. Network
+> Trong docker thì có cơ chế quản lý các network, và các container sẽ chia sẻ kết nối mạng này với nhau trước khi có thể kết nối mạng ra ngoài hệ thống.<br/>
+> Trong docker mặc định khi cài đặt sẽ có 3 DRIVER mạng mặc định là:
+> <br/> NAME     DRIVER
+> <br/> bridge   bridge
+> <br/> host     host
+> <br/> none     null
+> <br/> Mặc định khi không setup thì các container sẽ kết nối với driver mạng là bridge.
 
-
+## Ví dụ:
+##### 1. example about call api from host of device and send request to container and response the webpage using image busy box and active the listen http of it.
+> Step-by-step: <br/>
+> 1. create the container with image busy box, following code: <br/>
+> docker run -it --name B1 -p 9999:80 busybox <br/>
+> 2. create the file index.html with following code:<br/>
+> vi index.html <br/>
+> And content can something your want<br/>
+> 3. active the listen from http with following code: <br/>
+> httpd <br/>
+> 4. connect the url http://localhost:9999/ and see the result.<br/>
