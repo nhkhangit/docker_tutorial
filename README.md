@@ -24,7 +24,9 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 >(-h HOST_NAME) Nếu chúng ta muốn đặt lại hostname cho container.<br/>
 >(-v) Để chia sẻ dữ liệu từ máy host vào container. Và khi container bị xóa thì dữ liệu tại máy host vẫn giữ nguyên. <br/>
 >(--rm) Khi container này kết thúc thì docker tự xóa container này khỏi hệ thống.<br/>
-
+>(-p HOST_PORT:CONTAINER_PORT) Khi muốn cho container kết nối tới một cổng của host.<br/>
+>(--network NAME_NETWORK) Khi muốn container sử dụng một cầu nối mạng do bạn chỉ định.<br/>
+>
 ##### 8. docker ps
 > Để kiểm tra danh sách các container đang khởi chạy.
 ##### 9. docker ps -a
@@ -134,6 +136,14 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 
 ##### 34. docker network rm NAME_NETWORK
 > Lệnh này sẽ giúp chúng ta xóa đi các NETWORK không sử dụng nữa.
+
+##### 35. docker run -it --network NAME_NETWORK IMAGE_ID
+> Lệnh này sẽ giúp chúng ta tạo ra một container sử dụng một network chỉ định.
+
+##### 36. docker network connect NAME_NETWORK NAME_CONTAINER || CONTAINER_ID
+> Lệnh này sẽ giúp chúng ta kết nối một container đang chạy với một mạng do chúng ta chỉ định.
+> <br/> Khi các container trong cùng một mạng có thể ping lẫn nhau thông qua ip hoặc tên container.
+> 
 
 
 ## Khái niệm
