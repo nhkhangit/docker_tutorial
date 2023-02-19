@@ -127,6 +127,15 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 ##### 32. docker run -it -p PORT_HOST:PORT_CONTAINER ID_IMAGE || NAME_IMAGE
 > Lệnh này sẽ thực thi tạo ra một container lắng nghe từ **PORT_HOST** của máy host chuyển vào **PORT_CONTAINER** của container.
 
+##### 33. docker network create --driver DRIVER_NAME NEW_NAME_NETWORK
+> Lệnh này sẽ giúp chúng ta tạo ra các cầu mạng mới. Trong đó: <br/>
+> **DRIVER_NAME** là driver card mạng để tạo một card mạng mới. Thường sẽ dùng driver là **bridge**<br/>
+> **NEW_NAME_NETWORK** là tên của card mạng mới mà chúng ta muốn tạo.
+
+##### 34. docker network rm NAME_NETWORK
+> Lệnh này sẽ giúp chúng ta xóa đi các NETWORK không sử dụng nữa.
+
+
 ## Khái niệm
 ##### 1. Images
 > Images trong docker là các phần mềm được đóng gói và quản lý bởi docker. <br/>
