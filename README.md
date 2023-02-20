@@ -26,7 +26,7 @@ Hoặc chúng ta có thể sử dụng image id thay cho image:tag.
 >(--rm) Khi container này kết thúc thì docker tự xóa container này khỏi hệ thống.<br/>
 >(-p HOST_PORT:CONTAINER_PORT) Khi muốn cho container kết nối tới một cổng của host.<br/>
 >(--network NAME_NETWORK) Khi muốn container sử dụng một cầu nối mạng do bạn chỉ định.<br/>
->
+>(-d) Khi tạo xong container thì container sẽ được chạy nền.<br/>
 ##### 8. docker ps
 > Để kiểm tra danh sách các container đang khởi chạy.
 ##### 9. docker ps -a
@@ -176,3 +176,16 @@ Các container thì có thể ghi được dữ liệu vào trong nó. <br/>
 > 3. active the listen from http with following code: <br/>
 > httpd <br/>
 > 4. connect the url http://localhost:9999/ and see the result.<br/>
+
+##### 2. setup env for project php using apache and mysql in docker
+> 1. Install the php with tag php have fpm, following code:<br/>
+> docker pull php:fpm<br/>
+> 2. Create the network using driver bridge, following code:<br/>
+> docker network create --driver bridge www-net<br/>
+> 3. set up server php in the docker using port 9000, with following code: <br/>
+> docker run -d --name C-php -h php -v PATH_HOST:PATH_CONTAINER --network www-net php:fpm<br/>
+> 4. create the content website using php in the PATH_HOST<br/>
+> 5. run the content php code using the following code: <br/>
+> docker exec c-php bash <br/>
+> cd PATH_CONTAINER <br/>
+> php file_name.php 
